@@ -2,14 +2,15 @@
 #define piezo 4
 #define light_sensor 5
 #define LED 6
-#define auto_button 8
+#define auto_button 3
 #define piezo 4
 #define distance_sensor 9
 #define button 2
-#define motor 3
+#define motor 8
 boolean button_state = 0;
 boolean button_state2 = 0;
 void setup() {
+  
   pinMode(piezo, OUTPUT);
   pinMode(LED, OUTPUT);
   pinMode(piezo, OUTPUT);
@@ -46,9 +47,13 @@ void loop() {
     } else {
       analogWrite(LED, 0);
     }
-  } else {
+    
+
+  } 
+  else {
     analogWrite(LED, 0);
   }
+  
   Serial.println(button_state2);
   Serial.println(digitalRead(light_sensor));
   if (digitalRead(distance_sensor) == 1) {
